@@ -12,9 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == ActionEnum::GET->name && $_SERVER['REQUEST_URI
 $requestPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $pattern = '/^\/api\/get_capsules\/([A-Za-z0-9]+)$/';
 
-$actionEnum = new ActionEnum(); // Instantiate ActionEnum
-
-if ($_SERVER["REQUEST_METHOD"] == $actionEnum->GET->name && preg_match($pattern, $requestPath, $matches)) {
+if ($_SERVER["REQUEST_METHOD"] == ActionEnum::GET->name && preg_match($pattern, $requestPath, $matches)) {
     $serial = $matches[1];
     $capsuleController->getOneCapsule($serial);
 }
