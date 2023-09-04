@@ -7,6 +7,14 @@ require_once  __DIR__ . '/app/Helpers/function.php';
 
 $capsuleController = new CapsuleController();
 
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    header('Access-Control-Allow-Origin: https://your-frontend-app-domain.com');
+    header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+    header('Access-Control-Allow-Headers: Content-Type, Authorization');
+    header('Access-Control-Allow-Credentials: true');
+    http_response_code(204); // No Content
+    exit();
+}
 
 if ($_SERVER["REQUEST_METHOD"] == ActionEnum::GET->name && $_SERVER['REQUEST_URI'] == '/api/get_capsules') {
       $capsuleController->getCapsules();

@@ -1,0 +1,17 @@
+{
+    "name": "capsule/project",
+    "autoload": {
+        "psr-4": {
+            "Capsule\\Project\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hussayn-dev",
+            "email": "hussaynabdsamad07@gmail.com"
+        }
+    ],
+    "require": {
+        "spatie/laravel-cors": "^1.7"
+    }
+}
